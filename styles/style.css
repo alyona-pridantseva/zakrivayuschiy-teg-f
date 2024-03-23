@@ -256,14 +256,16 @@
 }
 
 .card__like-button:focus-visible,
-.content__button-save:focus-visible {
+.content__button-save:focus-visible,
+.button-close-ok:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0px 0px var(--accent-color);
   transition: box-shadow 0.3s ease;
 }
 
 .card__like-button::before,
-.content__button-save::before {
+.content__button-save::before,
+.button-close-ok::before {
   content: "";
   position: absolute;
   transform: scaleX(0);
@@ -277,7 +279,8 @@
 }
 
 .card__like-button:hover::before,
-.content__button-save:hover::before {
+.content__button-save:hover::before,
+.button-close-ok:hover::before {
   transform: scaleX(1);
 }
 
@@ -349,6 +352,7 @@ dialog::backdrop {
 }
 
 .button-close-ok {
+  position: relative;
   cursor: pointer;
   background-color: transparent;
   border: 2px solid var(--accent-color);
@@ -362,6 +366,8 @@ dialog::backdrop {
   font-family: var(--font-family-accent);
   font-weight: var(--font-weight-text);
   text-transform: uppercase;
+  color: var(--mixing-color);
+  mix-blend-mode: difference;
 }
 
 .card-img__item-1 {
