@@ -12,3 +12,111 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+
+/* постоянная анимация(стрелка) пункта меню в header */
+@keyframes moving-arrow {
+  from {
+    left: -20px;
+  }
+  to {
+    left: -16px;
+  }
+}
+
+@keyframes heart-moving {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.5;
+  }
+}
+
+@keyframes sparks-moving {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* анимация иконки Like(сердце) */
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  opacity: 0;
+  fill: var(--contour-heart-icon);
+  transition:
+    opacity  0.3s 0.03s linear,
+    fill 0.3s 0.03s linear;
+}
+
+.like-icon:hover .core {
+  opacity: 1;
+  fill: var(--contour-heart-icon);
+  transition:
+    opacity  0.3s 0.03s linear,
+    fill 0.3s 0.03s linear;
+}
+
+.main-body {
+  opacity: 0;
+  fill: var(--contour-heart-icon);
+  transition:
+    opacity 0.3s 0.05s linear,
+    fill 0.3s 0.05s linear;
+}
+
+.like-icon:hover .main-body {
+  opacity: 1;
+  fill: var(--contour-heart-icon);
+  transition:
+    opacity 0.3s 0.05s linear,
+    fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--accent-heart-icon);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--accent-heart-icon);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+  opacity: 1;
+  fill: var(--accent-heart-icon);
+  transition: opacity 0.3s 0.03s linear;
+}
+
+.like-icon.is-liked .main-body {
+  opacity: 1;
+  fill: var(--accent-heart-icon);
+  transition: opacity 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--accent-heart-icon);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-moving 0.3s ease-in 0.1s alternate;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-moving 0.3s ease-in 0.3s alternate;
+}
+
+.contour {
+  fill: var(--contour-heart-icon);
+  transition: fill 0.1s linear;
+}
+
