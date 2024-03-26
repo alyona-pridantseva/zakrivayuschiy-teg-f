@@ -91,7 +91,6 @@
   content: "▶";
   position: absolute;
   top: 0;
-  left: 0;
   inset-inline-start: -20px;
   animation: moving-arrow 0.5s ease-in-out infinite alternate;
 }
@@ -292,6 +291,10 @@
   mix-blend-mode: difference;
 }
 
+.button__text-capital {
+  text-transform: uppercase;
+}
+
 dialog::backdrop {
   background-color: #000;
   opacity: 75%;
@@ -322,7 +325,6 @@ dialog::backdrop {
   color: var(--accent-color);
   padding: 30px;
   max-inline-size: 357px;
-  min-block-size: 195px;
 }
 
 .modal-window-info {
@@ -404,7 +406,6 @@ dialog::backdrop {
 
   .modal-window {
     max-inline-size: 341px;
-    min-block-size: 197px;
     padding-inline-start: 42px;
     padding-inline-end: 42px;
   }
